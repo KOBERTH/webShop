@@ -1,15 +1,14 @@
 import { useLocation } from "react-router-dom";
 import useCustomContext from "./useCustomContext";
 import { addProductToCart } from "../api/Post";
-import { productCardProps } from "../types/hooksTypes";
 import { useState } from "react";
 
-export default function useProductCard() {
+export default function useProduct() {
   const location = useLocation();
   const [amount, setAmount] = useState(1);
   const { addProduct, getHash } = useCustomContext();
 
-  const handleAddToCart = async ({id, img, price, name}: productCardProps) => {
+  const handleAddToCart = async (id: string , img: string, price: string, name: string) => {
     
     let tempSesionId = '';
     const userEmail = localStorage.getItem('email') || '';
@@ -21,7 +20,6 @@ export default function useProductCard() {
         tempSesionId = (date.getTime() + Math.random()).toString();
         const tempSessionData = {
           sessionId: tempSesionId,
-          sessionTime: date.getTime().toString()
         };
         localStorage.setItem('tempSessionData', JSON.stringify(tempSessionData));
       }

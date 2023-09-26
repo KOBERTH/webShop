@@ -14,18 +14,18 @@ const Container = ({children, title}: {children: ReactNode, title: string}) => (
 
 const CheakoutForm = ({nextStep}: {nextStep: (step: number) => void}) => {
 
-  const formData = JSON.parse(localStorage.getItem('formData') || '') || {};
+  const formData = JSON.parse(localStorage.getItem('formData') || '{}');
 
   const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({
     defaultValues: {
-      name: formData.name,
-      email: formData.email,
-      address: formData.address,
-      canton: formData.canton,
-      cedula: formData.cedula,
-      celular: formData.celular,
-      distrito: formData.distrito,
-      provincia: formData.provincia,
+      name: formData.name || '',
+      email: formData.email || '',
+      address: formData.address || '',
+      canton: formData.canton || '',
+      cedula: formData.cedula || '',
+      celular: formData.celular || '',
+      distrito: formData.distrito || '',
+      provincia: formData.provincia || '',
     }
   });
   const onSubmit: SubmitHandler<Inputs> = (data) => {

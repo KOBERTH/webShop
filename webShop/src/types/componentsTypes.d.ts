@@ -5,6 +5,8 @@ export type ProductCardProps = {
   name: string;
   price: string;
   features: Array<string>
+  brand: string 
+  category: string
 }
 
 export type CarouselProps = {
@@ -49,6 +51,7 @@ export type SectionProps = {
   discount: string;
   description: Array<string>
   category: string;
+  brand: string
 }
 
 type Inputs = {

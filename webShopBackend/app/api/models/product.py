@@ -12,3 +12,4 @@ class Product(BaseModel):
   description: List[str]
   category: str
   active: bool
+  brand: str

@@ -50,6 +50,8 @@ export default function Section ({ categoryName }: {categoryName: string}) {
               price={product.price}
               name={product.name}
               features={product.description}
+              brand={product.brand}
+              category={product.category}
             />
           ))
         }

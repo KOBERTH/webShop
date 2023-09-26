@@ -19,6 +19,7 @@ async def save_products(products: List[Product]):
   products_dict = [dict(product) for product in products]
 
   collection.insert_many(products_dict)
+
   return {
     "message": "Productos guardados correctamente"
   }

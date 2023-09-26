@@ -7,10 +7,12 @@ import { useEffect, useState } from "react";
 import btnStyles from "../components/Theme/button";
 import { SectionProps } from "../types/componentsTypes";
 import { getProductById } from "../api/Gets";
+import useProduct from "../hooks/useProduct";
 
 export default function SingleProduct () {
 
   const productId = useParams()
+  const {handleAddToCart, setAmount} = useProduct();
   const [product, setProduct] = useState<SectionProps>();
 
   useEffect(() => {
@@ -29,7 +31,7 @@ export default function SingleProduct () {
         
         <div className="p-4 bg-neutral-200 rounded-lg shadow-lg shadow-neutral-600 flex flex-col xl:flex-row xl:gap-4">
           <section className="rounded-lg overflow-hidden xl:w-1/2">
-            <img className="bg-neutral-200 p-4 max-h-[40rem]" src={product?.img_url} alt={img} />
+            <img className="bg-neutral-200 object-contain lg:w-full p-4 max-h-[40rem]" src={product?.img_url} alt={img} />
           </section>
 
           <section className="flex flex-col gap-3 xl:w-1/2">
@@ -46,8 +48,8 @@ export default function SingleProduct () {
             </ul>
             
             <div className="flex gap-4">
-              <Counter />
-              <button className={`${btnStyles.primary} w-full`}>
+              <Counter initialCount={1} onCountChange={setAmount} />
+              <button className={`${btnStyles.primary} w-full`} onClick={() => handleAddToCart(product?.id.toString() || '', product?.img_url || '', product?.price || '', product?.name || '')}>
                 Add to Cart
               </button>
             </div>

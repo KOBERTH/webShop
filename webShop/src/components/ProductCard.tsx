@@ -1,14 +1,14 @@
 import { ProductCardProps } from "../types/componentsTypes";
 import { NavLink } from "react-router-dom";
 
-import useProductCard from "../hooks/useProductCard";
+import useProduct from "../hooks/useProduct";
 import btnStyles from "./Theme/button";
 import Counter from "./Counter";
 import { AiOutlineLine } from "react-icons/ai";
 
-export default function ProductCard ( { id, img, price, name, features}: ProductCardProps ) {
+export default function ProductCard ( { id, img, price, name, features, brand, category}: ProductCardProps ) {
 
-  const {location, getHash, handleAddToCart, setAmount} = useProductCard();
+  const {location, getHash, handleAddToCart, setAmount} = useProduct();
 
   return (
     <div className="bg-neutral-200 h-full p-2 rounded-lg flex flex-col shadow shadow-neutral-600 lg:flex-row">
@@ -39,7 +39,7 @@ export default function ProductCard ( { id, img, price, name, features}: Product
             <div className="hidden lg:block">
               <Counter initialCount={1} onCountChange={setAmount} />
             </div>
-            <button className={`${btnStyles.primary} w-full`} onClick={() => handleAddToCart({id, img, price, name})}>
+            <button className={`${btnStyles.primary} w-full`} onClick={() => handleAddToCart(id, img, price, name)}>
               Add to Cart
             </button>
           </div>
@@ -51,10 +51,8 @@ export default function ProductCard ( { id, img, price, name, features}: Product
         <div className="hidden lg:block shadow">
           <h4 className="bg-neutral-300 p-2">Detalles</h4>
           <ul className="p-2 flex flex-col gap-2">
-            <li>Marca</li>
-            <li>Catgoria</li>
-            <li>Color</li>
-            <li>Genero</li>
+            <li>Marca: {brand}</li>
+            <li>Catgoria: {category}</li>
           </ul>
         </div>
         

@@ -8,7 +8,8 @@ def product_schema(product) -> dict:
     "discount": product["discount"],
     "description": product["description"],
     "category": product["category"],
-    "active": product["active"]
+    "active": product["active"],
+    "brand": product["brand"]
   }
 
 def products_schema(products) -> list:
@@ -21,8 +22,7 @@ def cartProduct_schema(product) -> dict:
     "img_url": product["img_url"],
     "name": product["name"],
     "price": product["price"],
-    "amount": product["amount"],
-    # "discount": product["discount"],
+    "amount": product["amount"]
   }
 
 def cartProducts_schema(products) -> list:

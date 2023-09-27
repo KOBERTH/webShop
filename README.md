@@ -1,30 +1,30 @@
 # Online Store
-Este proyecto se una pagina de una tienda online FullStack echa con React-TS, FastAPI and MongoDB
+This project is a FullStack online store page made with React-TS, FastAPI, and MongoDB.
 
 [![webShop.jpg](https://i.postimg.cc/pLz2n8Wy/webShop.jpg)](https://postimg.cc/5X9chXFM)
 
-El proyecto ya contiene varios elementos esenciales para tienda online como lo serian:
+The project already contains several essential elements for an online store, such as:
 
-- El carrito de compras donde pueden añadir, eliminar, actulizar la cantidad de cada prodcuto, tambien muestra la catidad de productos que hay en el. 
+- The shopping cart where you can add, remove, update the quantity of each product. It also shows the number of products in it.
 
 [![shopping-Cart.jpg](https://i.postimg.cc/Z5snzQP3/shopping-Cart.jpg)](https://postimg.cc/MnRqydFK)
 
-- El buscador que fuciona como un buscador normal o tipico el cual sirver para buscar algun producto y desde hay mismo decidir si añadirlo o no.
+- The search function works like a typical search engine, which is used to search for a product and decide whether to add it or not from there.
 
-- El apartado de la categorias que estan en la barra de navegacion.
+- The categories section is in the navigation bar.
 
-- Contiene la pagina de 404, y tambien esta inplementada la pagina de login la cual aunque la funcionalidad esta inplementada, aun faltan ajustes para que se pueda integrar por completo por lo que de momento no es 100% usable este apartado.
+- It contains a 404 page, and the login page is also implemented. Although the functionality is implemented, some adjustments are still needed for full integration, so this section is not 100% usable at the moment.
 
-- El metodo de compras es sensillo se esta usando Paypal como intermediario para relizar los pagos, al igual que hay un formulario para poder indicar nombre, direccion, etc.. y datos personales necesarios para la compra, esto se maneja como si fuese entrega a domicilio de momento nada mas.
+- The purchase method is simple. We are using PayPal as an intermediary for payments. There is also a form to indicate name, address, etc., and necessary personal data for the purchase. This is handled as if it were home delivery at the moment.
 
-- El metodo que se utiliza para manejar el sistema de usuarios de momento es un creacion de id para el usuario temporalmente, el cual se guarda junto al producto del carrito para tenerlo como si fuera el id de usuario.
+- The method used to handle the user system at the moment is a creation of a temporary user id, which is saved along with the shopping cart product as if it were the user id.
 
-En si la idea principal es crear un ("nuevo metodo") de vista de los producto, o hacer algo diferente a lo convecional por lo que en ves de que aya un pagina aparte para las categorias estas mismas estan en la pagina principal, estas se cargan asta que la seccion de la categoria se encuentra 100% en visualizada en la pantalla.
+The main idea is to create a (“new method”) of product view, or do something different from the conventional. So instead of having a separate page for categories, these are on the main page. These are loaded until the category section is 100% visualized on the screen.
 
 [![webShop2.jpg](https://i.postimg.cc/bNKyJLjK/webShop2.jpg)](https://postimg.cc/tYNQv3J5)
 
-De momento la pagina no cuenta con un programa grafico para controlar la base de datos o mejor dicho el backend pero pronto lo tendra de momento del backend se tiene que manejar manualmente.
+At the moment, the page does not have a graphical program to control the database or rather the backend but will soon have it. At the moment, the backend has to be handled manually.
 
-La pagina es tambien full responsive. y aunque aun le faltan unas cuantas mejoras es funcional cabe recalcar que no soy alguien experto por que lo que el proyecto no es perfecto.
+The page is also fully responsive. And although it still lacks a few improvements, it is functional. It should be noted that I am not an expert so the project is not perfect.
 
 [![webShop1.jpg](https://i.postimg.cc/0j4870KK/webShop1.jpg)](https://postimg.cc/sGpdrSc3)

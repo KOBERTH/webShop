@@ -1,14 +1,15 @@
 import { BiSolidTrash } from "react-icons/bi";
-import useCustomContext from "../../hooks/useCustomContext";
-import Counter from "../Counter";
-import { deleteProductFromCart } from "../../api/Delete";
 import { useState } from "react";
+
+import { deleteProductFromCart } from "../../api/deleteProductCart";
+import useCustomContext from "../../hooks/useCustomContext";
 import { Item } from "../../types/contextTypes";
+import Counter from "../Counter";
 
 export default function CartProduct ({id, img, productName, price, amount}: {id: string, img: string, productName: string, price: string, amount:number}) {
 
   const { deleteItem, calculateTotal } = useCustomContext();
-  const [cartAmount, setCartAmount] = useState(amount);
+  const [ cartAmount, setCartAmount ] = useState(amount);
 
   const handleCountChange = (newCount: number) => {
     setCartAmount(newCount);
@@ -24,7 +25,6 @@ export default function CartProduct ({id, img, productName, price, amount}: {id:
       calculateTotal();
     }
   };
-
 
   async function deleteProduct(id: string) {
     const data = await deleteProductFromCart(id);

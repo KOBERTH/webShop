@@ -34,7 +34,7 @@ export default function Layout ({children}: {children: ReactNode}) {
   return (
     <div className="bg-custom-light h-full flex flex-col md:flex-row">
       <NavigationBar openCart={openCart} openSearch={openSearch} />
-      <section className="min-h-full w-full flex flex-col justify-between gap-4 md:z-40">
+      <section className="min-h-full w-full flex flex-col justify-between items-center gap-4 md:z-40">
         {children}
         {/* <Footer /> */}
       </section>

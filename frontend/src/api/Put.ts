@@ -5,7 +5,7 @@ type Product = {
 
 export async function updateFetchProducts(tempSessionId: string, products: Product[]) {
   try {
-    const response = await fetch('http://127.0.0.1:8000/cart/updateProducts', {
+    const response = await fetch('http://127.0.0.1:8000/api/cart/', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

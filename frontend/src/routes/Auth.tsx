@@ -3,7 +3,7 @@ import { BsArrowBarLeft } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 
 import logo from "../assets/logo-black.webp";
-import Input from "../components/Inputs/Input";
+import Input from "../components/Input";
 import btnStyles from "../components/Theme/button";
 import { authUser } from "../api/Post";
 

@@ -9,7 +9,7 @@ type ProductsProps = {
 const Products = ({products, innerPage, headingText}: ProductsProps) => {
   // console.log(products)
   return (
-    <div className="p-4">
+    <div className="p-4 w-full">
       {
         !innerPage && 
         <h2 className="text-custom-white tracking-widest text-xl font-medium uppercase md:text-2xl after:content-normal after:block after:w-12 after:h-1 after:bg-highlight">

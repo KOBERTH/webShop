@@ -31,12 +31,11 @@ def view_cart_products(user: str):
 def update_cart_products(dataOpc: UpdateData):
   tempSesionId = dataOpc.tempSessionId
   products = dataOpc.products
-
   if tempSesionId:
     for product in products:
       # Actualiza el documento que coincide con el tempSesionId y el id del producto proporcionados
-      updated_product = collection.update_one(
-        {"tempSesionId": tempSesionId, "id": product.id},
+      collection.update_one(
+        {"user": tempSesionId, "id": product.id},
         {"$set": {"amount": product.amount}}
       )
     return {

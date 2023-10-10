@@ -8,7 +8,7 @@ import CheakoutForm from "../components/Cheakout/CheakoutForm";
 
 export default function Cheakout (  ) {
 
-  const stripePromise = loadStripe('pk_test_51MwroREgA8JjolxWMYB7IWSMu7UG2Ia14RvZoXZprltH0qyZIyc1tXxBdmAEtf3cbuEXcakpGA7fLou9PXUc2GxY00HPSYfJjE');
+  const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_APIKEY);
   // const { total, items } = useCustomContext();
   // const onSubmit: SubmitHandler<Inputs> = (data) => {
   // }

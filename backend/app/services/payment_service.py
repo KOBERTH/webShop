@@ -1,14 +1,24 @@
-from pydantic import BaseModel
 from stripe.error import StripeError
+from pydantic import BaseModel
 import stripe
 
-stripe.api_key = "sk_test_51MwroREgA8JjolxWk3ENs8FZIiiBirS9TLjkGV4A3IUTx4mrzKElhO0PDbwcdjUMlb0k7MeidT3qye2IAoTwZbmD005uyHCJDD"
+from dotenv import load_dotenv
+import os
+
+
+from dataBase import client
+from models.invoice_details import InvoiceDetails
+
+collection = client.orders
+
+load_dotenv()
+stripe.api_key = os.getenv('STRIPE_APIKEY')
 
 class PaymentData(BaseModel):
   id: str
   amount: int
 
-async def create_checkout_session(payment_data: PaymentData):
+async def create_checkout_session(payment_data: PaymentData, invoice_details: InvoiceDetails):
   try:
     payment = stripe.PaymentIntent.create(
       amount=payment_data.amount,
@@ -19,6 +29,10 @@ async def create_checkout_session(payment_data: PaymentData):
       return_url="http://localhost:5173/",
     )
     print(payment)
+    # Insertar los datos de la factura en MongoDB
+    invoice_details_dict = dict(invoice_details)
+    result = collection.insert_one(invoice_details_dict)
+
     return {"message": "Successful Payment"}
   except StripeError as e:
     return {"error": e.user_message}

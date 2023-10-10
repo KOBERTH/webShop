@@ -33,7 +33,7 @@ export default function CartProduct ({id, img, productName, price, amount}: {id:
   }
 
   return (
-    <div className="bg-neutral-300 p-2 flex gap-4 rounded-lg">
+    <div className="bg-custom-light p-2 flex gap-4 rounded-lg">
       <img className="w-24 object-contain" src={img} alt="headphonesImg" />
       <section className="w-full flex flex-col gap-2 justify-between">
         <div className="flex justify-between">

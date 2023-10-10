@@ -4,7 +4,7 @@ import { Elements, CardElement, useStripe, useElements } from "@stripe/react-str
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 
-import Layout from "../Layouts/Layout";
+import Layout from "../components/Layout";
 import Input from "../components/Inputs/Input";
 
 function CheakoutForm () {

@@ -12,12 +12,12 @@ const Products = ({products, innerPage, headingText}: ProductsProps) => {
     <div className="p-4">
       {
         !innerPage && 
-        <h2 className="text-xl font-medium uppercase md:text-2xl after:content-normal after:block after:w-12 after:h-1 after:bg-indigo-800">
+        <h2 className="text-custom-white tracking-widest text-xl font-medium uppercase md:text-2xl after:content-normal after:block after:w-12 after:h-1 after:bg-highlight">
           {headingText}
         </h2>
       }
       <br />
-      <ul className="grid grid-cols-[repeat(auto-fit,_minmax(min(100%,_18rem),_1fr))] auto-rows-max gap-6">
+      <ul className="grid grid-cols-[repeat(auto-fill,_minmax(min(100%,_18rem),_1fr))] auto-rows-max gap-6">
         {
           products.map((item, index) => (
             <li key={index} className="flex">

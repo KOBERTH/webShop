@@ -1,0 +1,4 @@
+fastapi
+pymongo
+stripe
+python-dotenv
